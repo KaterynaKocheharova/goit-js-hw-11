@@ -17,8 +17,33 @@ export function renderImages(response) {
       downloads,
       comments,
     }) =>
-      `<li class="gallery-item"><a class="image-link" href="${largeImageURL}"><img class="gallery-image" src="${webformatURL}" alt="${tags}"></a><p>likes</p><span>${likes}</span><p>views</p><span>${views}</span><p>downloads</p><span>${downloads}</span><p>comments</p><span>${comments}</span></li>`
+      `
+      <li class="gallery-item">
+        <a class="image-link" href="${largeImageURL}">
+          <img class="gallery-image" src="${webformatURL}" alt="${tags}" />
+        </a>
+
+        <div>
+          <div>
+            <p>likes</p>
+            <span>${likes}</span>
+          </div>
+          <div>
+            <p>views</p>
+            <span>${views}</span>
+          </div>
+          <div>
+            <p>downloads</p>
+            <span>${downloads}</span>
+          </div>
+          <div>
+            <p>comments</p>
+            <span>${comments}</span>
+          </div>
+        </div>
+      </li>
+      `
   );
 
-  gallery.insertAdjacentHTML("beforeend", galleryMarkup);
+  gallery.insertAdjacentHTML('beforeend', galleryMarkup);
 }
