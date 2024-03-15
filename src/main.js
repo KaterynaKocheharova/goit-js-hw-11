@@ -48,6 +48,7 @@ function handleImageSearchFormSubmit(event) {
           timeout: false,
           position: "topRight",
           progressBarColor: "rgb(181, 27, 27)",
+          icon: 'icon-error-sign',
           
 
         });
