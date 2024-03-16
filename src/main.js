@@ -1,3 +1,4 @@
+
 import {findImages} from "./js/pixabay.api";
 
 const imageSearchForm = document.querySelector('.image-search-form');

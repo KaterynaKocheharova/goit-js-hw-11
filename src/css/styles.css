@@ -84,7 +84,7 @@ body {
 }
 
 .iziToast-wrapper .iziToast>.iziToast-close {
-  background: url("../sprite.svg#icon-easy-toast-closesvg") no-repeat 50% 50%;
+  background: url("../sprite.svg#icon-easy-toast-close") no-repeat 50% 50%;
 }
 /* GALLERY */
 
