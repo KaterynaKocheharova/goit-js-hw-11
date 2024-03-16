@@ -1,11 +1,17 @@
-// MAKING SERVER REQUEST
-// Описаний у документації
+// ============================================= INCLUDING IZITOAST
 import iziToast from 'izitoast';
-// Додатковий імпорт стилів
 import 'izitoast/dist/css/iziToast.min.css';
-import {renderImages} from "./render-functions";
 
+
+import {renderImages} from "./render-functions";
+import {gallery} from "./render-functions"
+
+// ===================================== MAKING SERVER REQUEST TO FIND IMAGES
 export function findImages(image) {
+
+  // Adding loader
+  const loaderMarkup =`<span class="loader"></span>`;
+  gallery.innerHTML = loaderMarkup;
   const imageSearchParams = new URLSearchParams({
     key: '42878081-96b370588af70c81d3a302fb0',
     q: image,
@@ -15,6 +21,7 @@ export function findImages(image) {
     safesearch: true,
   });
 
+  // making request to pixabay
   fetch(`https://pixabay.com/api/?${imageSearchParams}`)
     .then(response => {
       if (!response.ok) {
@@ -24,6 +31,7 @@ export function findImages(image) {
         return response.json();
       }
     })
+    // no images handling
     .then(response => {
       if (!response.hits.length) {
         iziToast.error({
@@ -39,9 +47,10 @@ export function findImages(image) {
           // icon: 'icon-error-sign',
         });
       } else {
-        renderImages(response)
+        // calling renderinf images function
+        renderImages(response);
       }
-    })
+    }) // handling an error
     .catch(error => {
       console.log(error);
     });

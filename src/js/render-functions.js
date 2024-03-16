@@ -1,16 +1,13 @@
-// Описаний у документації
+// ======================================= INLCUDING SIMPLE LIGHTBOX
 import SimpleLightbox from "simplelightbox";
-// Додатковий імпорт стилів
 import "simplelightbox/dist/simple-lightbox.min.css";
 
-// IMAGES GALLERY
+// ======================================== GALLERY VARIABLES
 export const gallery = document.querySelector('.images-gallery');
-let myLightboxGallery;
 
+// ======================================== RENDERING IMAGES
 export function renderImages(response) {
-  // control log
-  console.log(response.hits);
-  // all needed images
+  let myLightboxGallery;
   const images = response.hits;
   // creating markup
   const galleryMarkup = images.map(
@@ -51,8 +48,10 @@ export function renderImages(response) {
       `
   ).join("");
 
+  // adding markup
   gallery.innerHTML = galleryMarkup;
 
+  // simple lightbox creating or refreshing
   if (!myLightboxGallery) {
     myLightboxGallery = new SimpleLightbox('.gallery a');
   } else {
