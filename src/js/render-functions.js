@@ -23,27 +23,27 @@ export function renderImages(response) {
           <img class="gallery-image" src="${webformatURL}" alt="${tags}" />
         </a>
 
-        <div>
-          <div>
-            <p>likes</p>
-            <span>${likes}</span>
+        <div class="tags-container">
+          <div class="tag">
+            <p class="tag-name">likes</p>
+            <span class="tag-details">${likes}</span>
           </div>
-          <div>
-            <p>views</p>
-            <span>${views}</span>
+          <div class="tag">
+            <p class="tag-name">views</p>
+            <span class="tag-details">${views}</span>
           </div>
-          <div>
-            <p>downloads</p>
-            <span>${downloads}</span>
+          <div class="tag">
+            <p class="tag-name">downloads</p>
+            <span class="tag-details">${downloads}</span>
           </div>
-          <div>
-            <p>comments</p>
-            <span>${comments}</span>
+          <div class="tag">
+            <p class="tag-name">comments</p>
+            <span class="tag-details">${comments}</span>
           </div>
         </div>
       </li>
       `
-  );
+  ).join("");
 
   gallery.insertAdjacentHTML('beforeend', galleryMarkup);
 }

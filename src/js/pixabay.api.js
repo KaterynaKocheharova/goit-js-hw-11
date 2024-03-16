@@ -13,7 +13,6 @@ export function findImages(image) {
     orientation: 'horizontal',
     order: 'latest',
     safesearch: true,
-    min_height: 200
   });
 
   fetch(`https://pixabay.com/api/?${imageSearchParams}`)
