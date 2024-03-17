@@ -41,13 +41,12 @@ export function findImages(image) {
           messageSize: '16px',
           maxWidth: '432px',
           backgroundColor: 'rgb(239, 64, 64)',
-          timeout: false,
           position: 'topRight',
           progressBarColor: 'rgb(181, 27, 27)',
           // icon: 'icon-error-sign',
         });
       } else {
-        // calling renderinf images function
+        // calling rendering images function
         renderImages(response);
       }
     }) // handling an error

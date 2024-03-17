@@ -6,8 +6,10 @@
 */
 @import url('./reset.css');
 
-body {
-  padding-top: 60px;
+/* =============================================== GENERAL STYLES ============================================== */
+
+.search-images-section {
+  padding-top: 60xp;
 }
 
 .container {
@@ -15,6 +17,12 @@ body {
   margin-left: auto;
   max-width: 1200px;
 }
+
+section {
+  padding-top: 60px;
+}
+
+/* =============================================== SEARCH FORM ================================================ */
 
 .image-search-form {
   width: 371px;
@@ -41,6 +49,16 @@ body {
   letter-spacing: 0.04em;
 }
 
+.image-search-input:hover {
+  border: 1px solid rgb(0, 0, 0);
+}
+
+.image-search-input:active,
+.image-search-input:focus {
+  border: 1px solid rgb(78, 117, 255);
+  outline: none;
+}
+
 .image-search-submit-btn {
   width: 91px;
   height: 40px;
@@ -56,8 +74,12 @@ body {
   letter-spacing: 0.04em;
 }
 
-/* ASK ABOUT LETTER-SPACING */
+.image-search-submit-btn:hover,
+.image-search-submit-btn:focus {
+  background-color: rgb(108, 140, 255);
+}
 
+/* =========================================== IZI TOAST ======================================================== */
 
 .iziToast-wrapper-topRight {
   top: 50px;
@@ -83,30 +105,37 @@ body {
   border-radius: 4px;
 }
 
-.iziToast-wrapper .iziToast>.iziToast-close {
-  background: url("../sprite.svg#icon-easy-toast-close") no-repeat 50% 50%;
+.iziToast-wrapper .iziToast > .iziToast-close {
+  background: url('../img/close-btn.png') no-repeat 50% 50%;
 }
-/* GALLERY */
+/* ==================================================== GALLERY ============================================== */
 
-.images-gallery {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 24px;
+
+@media screen and (min-width: 768px) {
+  .images-gallery {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+
+  .gallery-item {
+    width: calc((100% - 72px) / 4);
+  }
 }
 
 .gallery-item {
-  width: calc((100% - 72px) / 4);
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
 
 .image-link {
   display: block;
   height: 200px;
-  overflow: hidden;
 }
 
 .gallery-image {
+  margin-right: auto;
+  margin-left: auto;
   object-fit: cover;
   height: 100%;
 }
@@ -130,7 +159,7 @@ body {
   font-weight: 600;
 }
 
-/* LOADER */
+/* =============================================== LOADER ==================================================== */
 
 .loader {
   width: 48px;
@@ -138,9 +167,10 @@ body {
   display: inline-block;
   position: relative;
 }
+
 .loader::after,
 .loader::before {
-  content: '';  
+  content: '';
   box-sizing: border-box;
   width: 48px;
   height: 48px;
@@ -165,4 +195,3 @@ body {
     opacity: 0;
   }
 }
-
