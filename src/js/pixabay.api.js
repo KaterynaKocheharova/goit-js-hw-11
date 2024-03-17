@@ -2,16 +2,12 @@
 import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
 
-
-import {renderImages} from "./render-functions";
-import {gallery} from "./render-functions"
+import { renderImages } from './render-functions';
+import { gallery } from './render-functions';
 
 // ===================================== MAKING SERVER REQUEST TO FIND IMAGES
 export function findImages(image) {
 
-  // Adding loader
-  const loaderMarkup =`<span class="loader"></span>`;
-  gallery.innerHTML = loaderMarkup;
   const imageSearchParams = new URLSearchParams({
     key: '42878081-96b370588af70c81d3a302fb0',
     q: image,
