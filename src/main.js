@@ -23,9 +23,11 @@ function handleImageSearchFormSubmit(event) {
   }
   const imageToSearchFor = event.currentTarget.elements.searchImage.value;
   event.currentTarget.reset();
-  // Adding loader
-  const loaderMarkup = `<span class="loader"></span>`;
-  gallery.innerHTML = loaderMarkup;
+
   // calling findimages function; making a request
   findImages(imageToSearchFor);
+
+    // Adding loader
+  const loaderMarkup = `<span class="loader"></span>`;
+  gallery.innerHTML = loaderMarkup;
 }

@@ -47,6 +47,6 @@ export function findImages(image) {
       }
     }) // handling an error
     .catch(error => {
-      console.log(error);
+      throw new Error(error);
     });
 }
