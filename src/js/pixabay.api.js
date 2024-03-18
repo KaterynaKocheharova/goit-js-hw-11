@@ -3,7 +3,6 @@ import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
 
 import { renderImages } from './render-functions';
-import { gallery } from './render-functions';
 
 // ===================================== MAKING SERVER REQUEST TO FIND IMAGES
 export function findImages(image) {
@@ -47,6 +46,10 @@ export function findImages(image) {
       }
     }) // handling an error
     .catch(error => {
-      throw new Error(error);
+      console.error('Error fetching images:', error);
+      iziToast.error({
+        message: 'Failed to fetch images. Please try again later.',
+        position: 'topRight'
+      });
     });
 }

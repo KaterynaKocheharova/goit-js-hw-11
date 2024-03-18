@@ -4,11 +4,10 @@ import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
 
 import { findImages } from './js/pixabay.api';
-import { gallery } from './js/render-functions';
+import { gallery } from './js/variables.js';
 
 const imageSearchForm = document.querySelector('.image-search-form');
 imageSearchForm.addEventListener('submit', handleImageSearchFormSubmit);
-
 
 // ======================================= HANDLE FORM SUBMIT
 
