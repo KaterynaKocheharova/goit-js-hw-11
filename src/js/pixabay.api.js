@@ -28,6 +28,7 @@ export function findImages(image) {
     })
     // no images handling
     .then(response => {
+      console.log(response);
       if (!response.hits.length) {
         iziToast.error({
           message:
