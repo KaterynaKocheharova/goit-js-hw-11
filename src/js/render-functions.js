@@ -1,6 +1,8 @@
 // ======================================= INLCUDING SIMPLE LIGHTBOX
 import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
+
+// ======================================== VAFRIABLES IMPORT
 import { gallery } from './variables.js';
 
 // ======================================== RENDERING IMAGES
@@ -49,14 +51,12 @@ export function renderImages(response) {
       )
       .join('');
 
-    // adding markup
     gallery.innerHTML = galleryMarkup;
 
-    // simple lightbox creating or refreshing
+    // ================================== ADDING SIMPLE LIGHTBOX
     if (!myLightboxGallery) {
       myLightboxGallery = new SimpleLightbox('.gallery a');
     } else {
-      // If SimpleLightbox is already initialized, call refresh method
       myLightboxGallery.refresh();
     }
   } catch {
