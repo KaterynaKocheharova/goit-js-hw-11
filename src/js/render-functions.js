@@ -61,7 +61,6 @@ export function renderImages(response) {
     }
   } catch {
     console.error('Error rendering images:', error);
-    // Display toast message to inform the user
     iziToast.error({
       message: 'Failed to render images. Please try again later.',
       position: 'topRight',

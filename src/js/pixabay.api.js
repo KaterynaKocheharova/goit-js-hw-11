@@ -5,7 +5,6 @@ import 'izitoast/dist/css/iziToast.min.css';
 // ============================================= MAKING REQUEST 
 export function findImages(image) {
 
-
 // ============================================ SEARCH PARAMS
   const imageSearchParams = new URLSearchParams({
     key: '42878081-96b370588af70c81d3a302fb0',
